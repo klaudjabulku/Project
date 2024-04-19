@@ -1,0 +1,11 @@
+Booking Confirmation:
+
+Hotel Name: null
+Room Type: null
+Check-in Date: 04/18/2024
+Check-out Date: 04/21/2024
+Name: Klaudja Bulku
+Number of People: 1
+Email Address: klaudiabulku@yahoo.com
+Phone Number: 123456789
+Price of Reservation: EUR 0.0
