@@ -4,6 +4,8 @@ import java.util.List;
 
 public class BookingService {
 
+    // Book room test github
+
     public void bookRoom(Hotel hotel, Room room, List<Customer> customers) {
         for (Customer customer : customers) {
             room.addObserver(customer);
