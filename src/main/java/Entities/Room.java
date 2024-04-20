@@ -34,15 +34,14 @@ public class Room {
     @JoinColumn(name = "hotel_id")
     private Hotel hotel;
 
-    public Room( int i, double v, boolean b, Date date, Hotel hotel) {
-
-    }
 
     public Integer getId() {
+
         return id;
     }
 
     public void setId(Integer id) {
+
         this.id = id;
     }
 

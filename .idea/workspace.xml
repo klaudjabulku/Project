@@ -5,34 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce36536a-b75d-4f4a-bee8-a061e7f08cf4" name="Changes" comment="Commiting entities and rep">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Klaudja_Booking_Confirmation.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/BookingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/Hotel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/HotelAvailabilityChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/Payment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/Reservations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/Room.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/RoomBookingSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/RoomBookingSystemTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Observer/HotelAvailabilityObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Repository/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Repository/HotelRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Repository/PaymentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Repository/RoomRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Strategy/DiscountedPricingStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Strategy/PricingStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SQL/data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SQL/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +107,23 @@
       <option name="presentableId" value="Default" />
       <updated>1713306209364</updated>
     </task>
+    <task id="LOCAL-00001" summary="Commiting entities and rep">
+      <option name="closed" value="true" />
+      <created>1713567851153</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713567851153</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Commiting entities and rep">
+      <option name="closed" value="true" />
+      <created>1713567867288</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713567867288</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
