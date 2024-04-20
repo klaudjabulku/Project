@@ -1,6 +1,7 @@
 package Repository;
 
 import Entities.Hotel;
+import Entities.Room;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -14,11 +15,13 @@ import java.util.List;
 
 public class HotelRepository {
 
-    private static SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
     public HotelRepository() {
         Configuration configuration = new Configuration();
         configuration.configure("hibernate.cfg.xml");
+        configuration.addAnnotatedClass(Hotel.class);
+        configuration.addAnnotatedClass(Room.class);
         sessionFactory = configuration.buildSessionFactory();
     }
 
@@ -38,7 +41,7 @@ public class HotelRepository {
         }
     }
 
-    public static Hotel findById(Integer id) {
+    public Hotel findById(Integer id) {
         try (Session session = sessionFactory.openSession()) {
             return session.find(Hotel.class, id);
         }
@@ -65,10 +68,15 @@ public class HotelRepository {
         }
     }
 
-    public static List<Hotel> getHotelsByCity(String city) {
+    public List<Hotel> getHotelsByCity(String city) {
         List<Hotel> hotels = new ArrayList<>();
-        String sql = "SELECT name, numberOfRooms FROM Hotels WHERE location = ?";
+        String sql = "SELECT h FROM Hotel h WHERE h.location = ?1";
+
+
         try (Session session = sessionFactory.openSession()) {
+//            System.out.println(session.createQuery("SELECT h from Hotel h", Hotel.class)
+//                    .getResultList());
+
             hotels = session.createQuery(sql, Hotel.class)
                     .setParameter(1, city)
                     .getResultList();

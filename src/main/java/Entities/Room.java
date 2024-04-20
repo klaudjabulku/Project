@@ -36,7 +36,6 @@ public class Room {
 
 
     public Integer getId() {
-
         return id;
     }
 
@@ -107,6 +106,7 @@ public class Room {
 
     }
 
+    @Transient
     private List<HotelAvailabilityObserver> observers = new ArrayList<>();
 
     public void addObserver(HotelAvailabilityObserver observer) {

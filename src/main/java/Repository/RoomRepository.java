@@ -1,5 +1,7 @@
 package Repository;
 
+import Entities.Customer;
+import Entities.Hotel;
 import Entities.Room;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,11 +13,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RoomRepository {
-    private static  SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
     public RoomRepository() {
         Configuration configuration = new Configuration();
         configuration.configure("hibernate.cfg.xml");
+        configuration.addAnnotatedClass(Hotel.class);
+        configuration.addAnnotatedClass(Customer.class);
         sessionFactory = configuration.buildSessionFactory();
     }
 

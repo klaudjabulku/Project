@@ -1,6 +1,7 @@
-package Entities;
-
-
+import Entities.Customer;
+import Entities.Hotel;
+import Entities.Payment;
+import Entities.Room;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 

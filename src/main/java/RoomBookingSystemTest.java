@@ -1,5 +1,7 @@
-package Entities;
-
+import Entities.BookingService;
+import Entities.Customer;
+import Entities.Hotel;
+import Entities.Room;
 import Repository.HotelRepository;
 import Repository.RoomRepository;
 import Strategy.DiscountedPricingStrategy;
@@ -13,10 +15,13 @@ import java.util.Scanner;
 public class RoomBookingSystemTest {
 
     public static void main(String[] args) {
+        HotelRepository hotelRepository = new HotelRepository();
+
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter city name: ");
-        String city = scanner.nextLine();
-        List<Hotel> hotels = HotelRepository.getHotelsByCity(city);
+        String city = scanner.next();
+        System.out.println("NGA CONSOLA" + city);
+        List<Hotel> hotels = hotelRepository.getHotelsByCity(city.trim());
         if (hotels.isEmpty()) {
             System.out.println("No hotels found in " + city);
         } else {
@@ -73,7 +78,7 @@ public class RoomBookingSystemTest {
                     customers.add(new Customer(name, surname, email, phone, "", new ArrayList<>()));
 
                     BookingService bookingService = new BookingService();
-                    Hotel hotel = HotelRepository.findById(hotelId);
+                    Hotel hotel = hotelRepository.findById(hotelId);
                     bookingService.bookRoom(hotel, room, customers);
                 }
 
