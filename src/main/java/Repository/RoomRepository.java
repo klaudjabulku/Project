@@ -39,20 +39,23 @@ public class RoomRepository {
         }
     }
 
-    public static Room findById(Integer id) {
+    public Room findById(Integer id) {
         try (Session session = sessionFactory.openSession()) {
             return session.find(Room.class, id);
         }
     }
-    public static List<Room> getRoomsByHotelId(int hotelId) {
+    public List<Room> getRoomsByHotelId(int hotelId) {
         List<Room> rooms = new ArrayList<>();
-        String sql = "SELECT id, room_type, room_capacity, price, availability FROM Room WHERE hotel_id = ? AND available > 0";
-        Session session = sessionFactory.openSession();
-        rooms = session.createQuery(sql, Room.class)
-                .setParameter(1,hotelId)
-                .getResultList();
-        session.close();
-        return rooms;
+
+        String sql = "SELECT id, room_type, room_capacity, price, availability FROM Room WHERE hotel_id = ?1 AND available > 0";
+        try (Session session = sessionFactory.openSession()) {
+
+            rooms = session.createQuery(sql, Room.class)
+                    .setParameter(1, hotelId)
+                    .getResultList();
+            session.close();
+            return rooms;
+        }
     }
 
     public void delete(Integer id) {
