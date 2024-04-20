@@ -31,7 +31,8 @@ public class RoomBookingSystemTest {
             }
             System.out.print("Enter hotel ID to see available rooms: ");
             int hotelId = scanner.nextInt();
-            List<Room> rooms = RoomRepository.getRoomsByHotelId(hotelId);
+            RoomRepository roomRepository=new RoomRepository();
+            List<Room> rooms = roomRepository.getRoomsByHotelId(hotelId);
             if (rooms.isEmpty()) {
                 System.out.println("No available rooms in the selected hotel.");
             } else {
@@ -51,7 +52,7 @@ public class RoomBookingSystemTest {
                 LocalDate endDate = LocalDate.parse(endDateStr);
 
 
-                Room room = RoomRepository.findById(roomId);
+                Room room = roomRepository.findById(roomId);
                 DiscountedPricingStrategy discountedPricingStrategy = new DiscountedPricingStrategy();
                 double totalPrice = discountedPricingStrategy.calculatePrice(room,startDate,endDate);
 
