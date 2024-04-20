@@ -1,6 +1,8 @@
 package Repository;
 
 import Entities.Customer;
+import Entities.Hotel;
+import Entities.Room;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -8,23 +10,19 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 public class CustomerRepository {
-    private static SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
-    static {
-        try {
+    public CustomerRepository() {
             Configuration configuration = new Configuration();
             configuration.configure("hibernate.cfg.xml");
+            configuration.addAnnotatedClass(Customer.class);
+            configuration.addAnnotatedClass(Room.class);
             sessionFactory = configuration.buildSessionFactory();
 
         }
-        catch (HibernateException ex) {
 
-            ex.printStackTrace();
-            throw new ExceptionInInitializerError(ex);
-        }
-    }
 
-    public static void save(Customer customer) {
+    public void save(Customer customer) {
 
         try (Session session = sessionFactory.openSession()) {
 
