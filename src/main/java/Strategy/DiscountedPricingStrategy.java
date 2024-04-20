@@ -2,6 +2,8 @@ package Strategy;
 
 import Entities.Room;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 public class DiscountedPricingStrategy implements PricingStrategy {
@@ -10,9 +12,8 @@ public class DiscountedPricingStrategy implements PricingStrategy {
     private static final double DISCOUNT_FOR_SEVEN_DAYS = 0.7;
 
     @Override
-    public double calculatePrice(Room room, Date checkInDate, Date checkOutDate) {
-        long diffInMillies = Math.abs(checkOutDate.getTime() - checkInDate.getTime());
-        long numberOfDays = diffInMillies / (1000 * 60 * 60 * 24);
+    public double calculatePrice(Room room, LocalDate checkInDate, LocalDate checkOutDate) {
+        long numberOfDays = ChronoUnit.DAYS.between(checkInDate, checkOutDate);
 
         double totalPrice;
         if (numberOfDays > 7) {

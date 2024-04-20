@@ -2,6 +2,8 @@ package Entities;
 
 import Repository.HotelRepository;
 import Repository.RoomRepository;
+import Strategy.DiscountedPricingStrategy;
+
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
@@ -43,9 +45,10 @@ public class RoomBookingSystemTest {
                 String endDateStr = scanner.nextLine();
                 LocalDate endDate = LocalDate.parse(endDateStr);
 
-                int nights = Period.between(startDate, endDate).getDays();
+
                 Room room = RoomRepository.findById(roomId);
-                double totalPrice = nights * room.getPrice();
+                DiscountedPricingStrategy discountedPricingStrategy = new DiscountedPricingStrategy();
+                double totalPrice = discountedPricingStrategy.calculatePrice(room,startDate,endDate);
 
                 System.out.println("Total price: LEK " + totalPrice);
 
