@@ -9,3 +9,9 @@ NumberOfrooms int
 
 create table customer(id int auto_increment primary key, name varchar(100)not null,
 surname varchar(155)not null,email varchar(155)not null,phone_number varchar(15)not null);
+
+create table room(id int auto_increment primary key,
+ room_capacity int not null,  price double,  availability boolean);
+ drop table room;
+ create table room(id int auto_increment primary key,
+ room_capacity int not null,  price double,  availability boolean);
