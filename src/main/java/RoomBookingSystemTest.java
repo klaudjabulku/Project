@@ -37,7 +37,7 @@ public class RoomBookingSystemTest {
                 System.out.println("No available rooms in the selected hotel.");
             } else {
                 for (Room room : rooms) {
-                    System.out.println("Room Capacity: " + room.getRoomCapacity() + ", Price: LEK" + room.getPrice() + ", Available: " + room.isAvailability());
+                    System.out.println("ID - " +room.getId()+ " Room Capacity: " + room.getRoomCapacity() + ", Price: LEK" + room.getPrice() + ", Available: " + room.isAvailability());
                 }
                 System.out.println("Select Room ID: ");
                 int roomId = scanner.nextInt();
@@ -80,7 +80,8 @@ public class RoomBookingSystemTest {
 
                     BookingService bookingService = new BookingService();
                     Hotel hotel = hotelRepository.findById(hotelId);
-                    bookingService.bookRoom(hotel, room, customers);
+                    List<Room> roomsOfHotel = roomRepository.getRoomsByHotelId(hotelId);
+                    bookingService.bookRoom(hotel, room, customers, roomsOfHotel);
                 }
 
             }

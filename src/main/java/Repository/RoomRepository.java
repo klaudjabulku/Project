@@ -16,11 +16,7 @@ public class RoomRepository {
     private SessionFactory sessionFactory;
 
     public RoomRepository() {
-        Configuration configuration = new Configuration();
-        configuration.configure("hibernate.cfg.xml");
-        configuration.addAnnotatedClass(Hotel.class);
-        configuration.addAnnotatedClass(Customer.class);
-        sessionFactory = configuration.buildSessionFactory();
+        sessionFactory = SessionConfiguration.getInstance();
     }
 
     public void save(Room room) {
@@ -46,7 +42,9 @@ public class RoomRepository {
     }
     public  List<Room> getRoomsByHotelId(int hotelId) {
         List<Room> rooms = new ArrayList<>();
-        String sql = "SELECT id, room_type, room_capacity, price, availability FROM Room WHERE hotel_id = ? AND available > 0";
+        String sql = "SELECT r FROM Room r " +
+                " join r.hotel h " +
+                "WHERE h.id = ?1 AND availability = true";
         Session session = sessionFactory.openSession();
         rooms = session.createQuery(sql, Room.class)
                 .setParameter(1,hotelId)

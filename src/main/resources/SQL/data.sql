@@ -671,3 +671,31 @@ insert into room(room_capacity, price, availability)
 (2,80,TRUE),
 (2,80,TRUE),
 (2,80,TRUE);
+
+
+
+UPDATE `hotel_reservation`.`hotel` SET `number_of_rooms` = '150' WHERE (`id` = '1');
+UPDATE `hotel_reservation`.`hotel` SET `number_of_rooms` = '200' WHERE (`id` = '2');
+UPDATE `hotel_reservation`.`hotel` SET `number_of_rooms` = '80' WHERE (`id` = '3');
+
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '1' WHERE (`id` = '1');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '2' WHERE (`id` = '2');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '3' WHERE (`id` = '3');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '1' WHERE (`id` = '4');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '2' WHERE (`id` = '5');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '3' WHERE (`id` = '6');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '4' WHERE (`id` = '7');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '5' WHERE (`id` = '8');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '1' WHERE (`id` = '248');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '2' WHERE (`id` = '247');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '3' WHERE (`id` = '245');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '4' WHERE (`id` = '246');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '5' WHERE (`id` = '243');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '3' WHERE (`id` = '242');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '1' WHERE (`id` = '241');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '1' WHERE (`id` = '244');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '4' WHERE (`id` = '239');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '1' WHERE (`id` = '240');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '1' WHERE (`id` = '237');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '9' WHERE (`id` = '238');
+UPDATE `hotel_reservation`.`room` SET `hotel_id` = '1' WHERE (`id` = '236');

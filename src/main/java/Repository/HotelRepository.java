@@ -18,11 +18,7 @@ public class HotelRepository {
     private SessionFactory sessionFactory;
 
     public HotelRepository() {
-        Configuration configuration = new Configuration();
-        configuration.configure("hibernate.cfg.xml");
-        configuration.addAnnotatedClass(Hotel.class);
-        configuration.addAnnotatedClass(Room.class);
-        sessionFactory = configuration.buildSessionFactory();
+        sessionFactory = SessionConfiguration.getInstance();
     }
 
     public void save(Hotel hotel) {

@@ -19,3 +19,14 @@ CREATE TABLE if not exists payment (
     credit_card VARCHAR(100),
     coupon_code VARCHAR(50)
 );
+
+ALTER TABLE `hotel_reservation`.`room`
+ADD COLUMN `hotel_id` INT NULL AFTER `availability`,
+ADD INDEX `hotel_fk_idx` (`hotel_id` ASC) VISIBLE;
+;
+ALTER TABLE `hotel_reservation`.`room`
+ADD CONSTRAINT `hotel_fk`
+  FOREIGN KEY (`hotel_id`)
+  REFERENCES `hotel_reservation`.`hotel` (`id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;

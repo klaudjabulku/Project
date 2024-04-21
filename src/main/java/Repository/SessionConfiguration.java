@@ -8,7 +8,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 public class SessionConfiguration {
-    static final SessionFactory sessionFactory = new Configuration()
+    private static final SessionFactory sessionFactory = new Configuration()
             .configure("hibernate.cfg.xml")
             .addAnnotatedClass(Customer.class)
             .addAnnotatedClass(Payment.class)

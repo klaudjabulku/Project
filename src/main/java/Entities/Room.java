@@ -30,10 +30,13 @@ public class Room {
     private boolean availability;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "hotel_id")
-    private Hotel hotel;
+    private Hotel hotel; // hotel.id
 
+
+    public Room() {
+    }
 
     public Integer getId() {
         return id;

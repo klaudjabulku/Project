@@ -13,13 +13,8 @@ public class CustomerRepository {
     private SessionFactory sessionFactory;
 
     public CustomerRepository() {
-            Configuration configuration = new Configuration();
-            configuration.configure("hibernate.cfg.xml");
-            configuration.addAnnotatedClass(Customer.class);
-            configuration.addAnnotatedClass(Room.class);
-            sessionFactory = configuration.buildSessionFactory();
-
-        }
+          sessionFactory = SessionConfiguration.getInstance();
+    }
 
 
     public void save(Customer customer) {
