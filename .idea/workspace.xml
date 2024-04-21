@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce36536a-b75d-4f4a-bee8-a061e7f08cf4" name="Changes" comment="change sql scripts">
+    <list default="true" id="ce36536a-b75d-4f4a-bee8-a061e7f08cf4" name="Changes" comment="Adding files">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_20_2024_11_48_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_20_2024_11_48_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/BookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/HotelAvailabilityChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/HotelAvailabilityChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Repository/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Repository/HotelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Repository/HotelRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Repository/PaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Repository/PaymentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Repository/RoomRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Repository/RoomRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Repository/SessionConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Repository/SessionConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/RoomBookingSystemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RoomBookingSystemTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SQL/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SQL/data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/SQL/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SQL/schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
@@ -167,29 +158,12 @@
       <option name="project" value="LOCAL" />
       <updated>1713612252323</updated>
     </task>
-    <task id="LOCAL-00005" summary="Adding files">
-      <option name="closed" value="true" />
-      <created>1713619185350</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1713619185350</updated>
-    </task>
-    <task id="LOCAL-00006" summary="change sql scripts">
-      <option name="closed" value="true" />
-      <created>1713685397149</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1713685397149</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commiting entities and rep" />
     <MESSAGE value="Adding files" />
-    <MESSAGE value="change sql scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="change sql scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding files" />
   </component>
 </project>

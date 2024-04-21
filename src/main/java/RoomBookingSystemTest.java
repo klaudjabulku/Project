@@ -8,6 +8,7 @@ import Strategy.DiscountedPricingStrategy;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -43,9 +44,27 @@ public class RoomBookingSystemTest {
                 int roomId = scanner.nextInt();
                 scanner.nextLine();
 
-                System.out.println("Enter start date (YYYY-MM-DD): ");
-                String startDateStr = scanner.nextLine();
-                LocalDate startDate = LocalDate.parse(startDateStr);
+                LocalDate today = LocalDate.now();
+
+                boolean validDate = false;
+                LocalDate startDate = null;
+
+                while (!validDate) {
+                    System.out.println("Enter start date (YYYY-MM-DD): ");
+                    String startDateStr = scanner.nextLine();
+
+                    try {
+                        startDate = LocalDate.parse(startDateStr);
+
+                        if (!startDate.isBefore(today)) {
+                            validDate = true;
+                        } else {
+                            System.out.println("Please enter a date on or after today.");
+                        }
+                    } catch (DateTimeParseException e) {
+                        System.out.println("Invalid date format. Please enter date in YYYY-MM-DD format.");
+                    }
+                }
 
                 System.out.println("Enter end date (YYYY-MM-DD): ");
                 String endDateStr = scanner.nextLine();
@@ -69,19 +88,43 @@ public class RoomBookingSystemTest {
                     System.out.println("Please enter your surname:");
                     String surname = scanner.nextLine();
 
-                    System.out.println("Please enter your email:");
-                    String email = scanner.nextLine();
+                    boolean validEmail = false;
+                    String email = "";
 
-                    System.out.println("Please enter your phone number:");
-                    String phone = scanner.nextLine();
+                    while (!validEmail) {
+                        System.out.println("Please enter your email:");
+                        email = scanner.nextLine();
 
-                    List<Customer> customers = new ArrayList<>();
-                    customers.add(new Customer(name, surname, email, phone, "", new ArrayList<>()));
+                        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
 
-                    BookingService bookingService = new BookingService();
-                    Hotel hotel = hotelRepository.findById(hotelId);
-                    List<Room> roomsOfHotel = roomRepository.getRoomsByHotelId(hotelId);
-                    bookingService.bookRoom(hotel, room, customers, roomsOfHotel);
+                        if(email.matches(emailRegex)) {
+                            validEmail = true;
+                        } else {
+                            System.out.println("Invalid email address. Please enter a valid email.");
+                        }
+                    }
+                    boolean validPhone = false;
+                    String phone = "";
+
+                    while (!validPhone) {
+                        System.out.println("Please enter your phone number:");
+                        phone = scanner.nextLine();
+                        String phoneRegex = "^(\\+?[1-9]\\d{1,3}[- ]?)?(\\(?\\d{3}\\)?[- ]?)?\\d{3}[- ]?\\d{4}$";
+
+                        if(phone.length() >= 10 && phone.length() <= 15 && phone.matches(phoneRegex)) {
+                            System.out.println("Valid phone number: " + phone);
+                            validPhone = true;
+                        } else {
+                            System.out.println("Invalid phone number. Please enter a valid phone number.");
+                        }
+                    }
+                        List<Customer> customers = new ArrayList<>();
+                        customers.add(new Customer(name, surname, email, phone, "", new ArrayList<>()));
+
+                        BookingService bookingService = new BookingService();
+                        Hotel hotel = hotelRepository.findById(hotelId);
+                        List<Room> roomsOfHotel = roomRepository.getRoomsByHotelId(hotelId);
+                        bookingService.bookRoom(hotel, room, customers, roomsOfHotel);
                 }
 
             }
