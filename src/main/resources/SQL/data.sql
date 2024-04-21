@@ -267,26 +267,9 @@ values  ('Hotel Continental', 'Tirane',4),
 ('Hotel Shëngjini', 'Lezhë',4),
 ('Hotel Drini', 'Lezhë',4),
 ('Hotel Durresi', 'Lezhë',4);
-('Hotel Saranda Beach', 'Saranda', 5, 2),
-('Grand Hotel Saranda', 'Saranda', 5, 3),
-('Saranda Palace Hotel', 'Saranda', 5, 2),
-('Ionian View Hotel', 'Saranda', 5, 2),
-('Adriatik Hotel', 'Saranda', 5, 2),
-('Blue Bay Hotel', 'Saranda', 5, 3),
-('Saranda International Hotel', 'Saranda', 5, 2),
-('Saranda City Hotel', 'Saranda', 5, 2),
-('Albturist Hotel', 'Saranda', 5, 2),
-('Butrinti Hotel', 'Saranda', 5, 3),
-('Kaonia Hotel', 'Saranda', 5, 2),
-('Demi Hotel', 'Saranda', 5, 2),
-('Bougainville Bay Hotel', 'Saranda', 5, 3),
-('Vila Duraku', 'Saranda', 5, 2),
-('Joni Hotel', 'Saranda', 5, 2),
-('Oasis Hotel', 'Saranda', 5, 3),
-('Azzura Hotel', 'Saranda', 5, 2),
 
 
-insert into Customer values of
+insert into Customer(name,surname,email,phone_number,location) values
 ('John', 'Doe', 'johndoe@gmail.com', '123456789', 'Tirana'),
 ('Jane', 'Smith', 'janesmith@gmail.com', '987654321', 'Durrës'),
 ('Alice', 'Johnson', 'alicejohnson@gmail.com', '456789123', 'Shkodër'),
@@ -314,7 +297,7 @@ insert into Customer values of
 ('Evelyn', 'Martinez', 'evelynmartinez@gmail.com', '321789654', 'Berat'),
 ('Alexander', 'Lee', 'alexanderlee@gmail.com', '987321654', 'Korçë'),
 ('Elijah', 'Scott', 'elijahscott@gmail.com', '654321987', 'Elbasan'),
-('Abigail', 'Green', 'abigailgreen@gmail.com', '159753852', 'Kavajë')
+('Abigail', 'Green', 'abigailgreen@gmail.com', '159753852', 'Kavajë'),
 ('Oliver', 'Hall', 'oliverhall@gmail.com', '357951486', 'Kukës'),
 ('Ava', 'Baker', 'avabaker@gmail.com', '654852357', 'Fier'),
 ('Lucas', 'Adams', 'lucasadams@gmail.com', '852357951', 'Lezhë'),
@@ -365,7 +348,7 @@ insert into Customer values of
 ('Grace', 'Adams', 'graceadams@gmail.com', '123456789', 'Lushnjë'),
 ('Lucas', 'White', 'lucaswhite@gmail.com', '456789123', 'Kavajë'),
 ('Scarlett', 'Nelson', 'scarlettnelson@gmail.com', '789123456', 'Krujë'),
-('Lily', 'Martinez', 'lilymartinez@gmail.com', '321654987', 'Peshkopi')
+('Lily', 'Martinez', 'lilymartinez@gmail.com', '321654987', 'Peshkopi'),
 ('Ethan', 'Parker', 'ethanparker@gmail.com', '654987321', 'Durrës'),
 ('Avery', 'Perez', 'averyperez@gmail.com', '159357246', 'Berat'),
 ('Jackson', 'Carter', 'jacksoncarter@gmail.com', '753159852', 'Vlorë'),

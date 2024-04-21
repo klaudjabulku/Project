@@ -1,13 +1,14 @@
 
 create table Hotel (
-hotel_id int not null primary key auto_increment,
-hotel_name varchar(255) not null,
-hotel_location varchar(255) not null,
-NumberOfrooms int
+id int not null primary key auto_increment,
+name varchar(255) not null,
+location varchar(255) not null,
+number_of_rooms int
 );
 
 create table Customer(id int auto_increment primary key, name varchar(100)not null,
-surname varchar(155)not null,email varchar(155)not null,phone_number varchar(15)not null, hotel_location varchar (225));
+surname varchar(155)not null,email varchar(155) not null,
+phone_number varchar(15)not null, location varchar (225));
 
 create table room(id int auto_increment primary key,
 room_capacity int not null,  price double,  availability boolean);

@@ -4,8 +4,6 @@ import javax.persistence.*;
 import java.time.LocalDate;
 @Entity
 @Table(name="reservations")
-
-
 public class Reservations {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
