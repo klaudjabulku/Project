@@ -10,7 +10,7 @@ public class PaymentRepository {
     private final SessionFactory sessionFactory;
 
     public PaymentRepository() {
-       sessionFactory = SessionConfiguration.getInstance();
+        sessionFactory = SessionConfiguration.getInstance();
     }
 
     public void save(Payment payment) {

@@ -1,19 +1,15 @@
 package Repository;
 
 import Entities.Customer;
-import Entities.Hotel;
-import Entities.Room;
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 
 public class CustomerRepository {
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
     public CustomerRepository() {
-          sessionFactory = SessionConfiguration.getInstance();
+        sessionFactory = SessionConfiguration.getInstance();
     }
 
 
@@ -26,7 +22,8 @@ public class CustomerRepository {
             session.persist(customer);
 
             transaction.commit();
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
 
             e.printStackTrace();
         }
@@ -37,7 +34,8 @@ public class CustomerRepository {
             Transaction transaction = session.beginTransaction();
             session.merge(customer);
             transaction.commit();
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -45,7 +43,8 @@ public class CustomerRepository {
     public Customer findById(Integer id) {
         try (Session session = sessionFactory.openSession()) {
             return session.find(Customer.class, id);
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
             return null;
         }
@@ -58,7 +57,8 @@ public class CustomerRepository {
             session.delete(customer);
             transaction.commit();
             System.out.println("Customer with id " + id + " was deleted successfully ");
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
     }
