@@ -1,13 +1,10 @@
-import Entities.BookingService;
-import Entities.Customer;
-import Entities.Hotel;
-import Entities.Room;
+import Entities.*;
+import Service.BookingService;
 import Repository.HotelRepository;
 import Repository.RoomRepository;
 import Strategy.DiscountedPricingStrategy;
 
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +17,9 @@ public class RoomBookingSystemTest {
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter city name: ");
+
         String city = scanner.next();
-        System.out.println("NGA CONSOLA" + city);
+
         List<Hotel> hotels = hotelRepository.getHotelsByCity(city.trim());
         if (hotels.isEmpty()) {
             System.out.println("No hotels found in " + city);
@@ -32,13 +30,13 @@ public class RoomBookingSystemTest {
             }
             System.out.print("Enter hotel ID to see available rooms: ");
             int hotelId = scanner.nextInt();
-            RoomRepository roomRepository=new RoomRepository();
+            RoomRepository roomRepository = new RoomRepository();
             List<Room> rooms = roomRepository.getRoomsByHotelId(hotelId);
             if (rooms.isEmpty()) {
                 System.out.println("No available rooms in the selected hotel.");
             } else {
                 for (Room room : rooms) {
-                    System.out.println("ID - " +room.getId()+ " Room Capacity: " + room.getRoomCapacity() + ", Price: LEK" + room.getPrice() + ", Available: " + room.isAvailability());
+                    System.out.println("ID - " + room.getId() + " Room Capacity: " + room.getRoomCapacity() + ", Price: LEK" + room.getPrice() + ", Available: " + room.isAvailability());
                 }
                 System.out.println("Select Room ID: ");
                 int roomId = scanner.nextInt();
@@ -61,7 +59,8 @@ public class RoomBookingSystemTest {
                         } else {
                             System.out.println("Please enter a date on or after today.");
                         }
-                    } catch (DateTimeParseException e) {
+                    }
+                    catch (DateTimeParseException e) {
                         System.out.println("Invalid date format. Please enter date in YYYY-MM-DD format.");
                     }
                 }
@@ -73,7 +72,7 @@ public class RoomBookingSystemTest {
 
                 Room room = roomRepository.findById(roomId);
                 DiscountedPricingStrategy discountedPricingStrategy = new DiscountedPricingStrategy();
-                double totalPrice = discountedPricingStrategy.calculatePrice(room,startDate,endDate);
+                double totalPrice = discountedPricingStrategy.calculatePrice(room, startDate, endDate);
 
                 System.out.println("Total price: LEK " + totalPrice);
 
@@ -97,7 +96,7 @@ public class RoomBookingSystemTest {
 
                         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
 
-                        if(email.matches(emailRegex)) {
+                        if (email.matches(emailRegex)) {
                             validEmail = true;
                         } else {
                             System.out.println("Invalid email address. Please enter a valid email.");
@@ -111,23 +110,45 @@ public class RoomBookingSystemTest {
                         phone = scanner.nextLine();
                         String phoneRegex = "^(\\+?[1-9]\\d{1,3}[- ]?)?(\\(?\\d{3}\\)?[- ]?)?\\d{3}[- ]?\\d{4}$";
 
-                        if(phone.length() >= 10 && phone.length() <= 15 && phone.matches(phoneRegex)) {
+                        if (phone.length() >= 10 && phone.length() <= 15 && phone.matches(phoneRegex)) {
                             System.out.println("Valid phone number: " + phone);
                             validPhone = true;
                         } else {
                             System.out.println("Invalid phone number. Please enter a valid phone number.");
                         }
                     }
-                        List<Customer> customers = new ArrayList<>();
-                        customers.add(new Customer(name, surname, email, phone, "", new ArrayList<>()));
 
-                        BookingService bookingService = new BookingService();
-                        Hotel hotel = hotelRepository.findById(hotelId);
-                        List<Room> roomsOfHotel = roomRepository.getRoomsByHotelId(hotelId);
-                        bookingService.bookRoom(hotel, room, customers, roomsOfHotel);
+                    System.out.println("Please enter your Payment Method (Credit Card, PayPal, or Coupon): ");
+                    String paymentMethod = scanner.next();
+
+                    List<Payment> payments = new ArrayList<>();
+
+                    if (paymentMethod.equalsIgnoreCase("credit card") ||
+                            paymentMethod.equalsIgnoreCase("paypal") ||
+                            paymentMethod.equalsIgnoreCase("coupon")) {
+
+                        System.out.println("Payment is completed");
+                    } else {
+                        System.out.println("The payment method is not valid!");
+                    }
+
+
+                    List<Customer> customers = new ArrayList<>();
+                    customers.add(new Customer(name, surname, email, phone, "", new ArrayList<>()));
+
+                    BookingService bookingService = new BookingService();
+                    Hotel hotel = hotelRepository.findById(hotelId);
+                    List<Room> roomsOfHotel = roomRepository.getRoomsByHotelId(hotelId);
+                    bookingService.bookRoom(hotel, room, customers, roomsOfHotel);
+
                 }
 
+
+
             }
+
         }
     }
 }
+
+
