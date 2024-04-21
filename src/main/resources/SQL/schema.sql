@@ -10,8 +10,7 @@ create table Customer(id int auto_increment primary key, name varchar(100)not nu
 surname varchar(155)not null,email varchar(155) not null,
 phone_number varchar(15)not null, location varchar (225));
 
-create table room(id int auto_increment primary key,
-room_capacity int not null,  price double,  availability boolean);
+create table room(id int, room_capacity int, price double, availability boolean, hotel_id int);
 
 CREATE TABLE if not exists payment (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -19,14 +18,5 @@ CREATE TABLE if not exists payment (
     credit_card VARCHAR(100),
     coupon_code VARCHAR(50)
 );
-
-ALTER TABLE `hotel_reservation`.`room`
-ADD COLUMN `hotel_id` INT NULL AFTER `availability`,
-ADD INDEX `hotel_fk_idx` (`hotel_id` ASC) VISIBLE;
-;
-ALTER TABLE `hotel_reservation`.`room`
-ADD CONSTRAINT `hotel_fk`
-  FOREIGN KEY (`hotel_id`)
-  REFERENCES `hotel_reservation`.`hotel` (`id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
+create table reservations(room_id int,customer_id int,start_date date,
+  end_date date,total_price double,status boolean);

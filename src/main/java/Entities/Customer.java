@@ -74,6 +74,6 @@ public class Customer implements HotelAvailabilityObserver {
 
     @Override
     public void update(Hotel hotel) {
-        System.out.println("Hotel " + hotel.getName() + " is now available for booking!");
+        System.out.println(hotel.getName() + " is booked successfully!");
     }
 }

@@ -1,9 +1,6 @@
 package Repository;
 
-import Entities.Customer;
-import Entities.Hotel;
-import Entities.Payment;
-import Entities.Room;
+import Entities.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -14,6 +11,7 @@ public class SessionConfiguration {
             .addAnnotatedClass(Payment.class)
             .addAnnotatedClass(Hotel.class)
             .addAnnotatedClass(Room.class)
+            .addAnnotatedClass(Reservations.class)
             .buildSessionFactory();
 
     public static SessionFactory getInstance() {

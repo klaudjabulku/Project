@@ -24,9 +24,8 @@ public class Reservations {
 
     private double totalPrice;
 
-    @Column(name = "status")
 
-    private String status;
+
 
     public int getId() {
         return id;
@@ -78,37 +77,27 @@ public class Reservations {
 
 
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 
     public Reservations() {
     }
 
-    public Reservations(int id, int roomId, int customerId, LocalDate startDate, LocalDate endDate, double totalPrice, String status) {
-        this.id = id;
+    public Reservations(int roomId, int customerId, LocalDate startDate, LocalDate endDate, double totalPrice) {
         this.roomId = roomId;
         this.customerId = customerId;
         this.startDate = startDate;
         this.endDate = endDate;
         this.totalPrice = totalPrice;
-        this.status = status;
     }
 
     @Override
     public String toString() {
         return "Reservations{" +
-                "id=" + id +
                 ", roomId=" + roomId +
                 ", customerId=" + customerId +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
                 ", totalPrice=" + totalPrice +
-                ", status='" + status + '\'' +
+
                 '}';
     }
 }

@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce36536a-b75d-4f4a-bee8-a061e7f08cf4" name="Changes" comment="Adding files">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_20_2024_11_48_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_20_2024_11_48_AM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Repository/ReservationRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Reservations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Reservations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Repository/SessionConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Repository/SessionConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/RoomBookingSystemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RoomBookingSystemTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/SQL/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SQL/data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/SQL/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SQL/schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
@@ -158,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713612252323</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Adding files">
+      <option name="closed" value="true" />
+      <created>1713698331357</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713698331357</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
