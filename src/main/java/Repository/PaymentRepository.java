@@ -10,9 +10,7 @@ public class PaymentRepository {
     private final SessionFactory sessionFactory;
 
     public PaymentRepository() {
-        Configuration configuration = new Configuration();
-        configuration.configure("hibernate.cfg.xml");
-        sessionFactory = configuration.buildSessionFactory();
+        sessionFactory = SessionConfiguration.getInstance();
     }
 
     public void save(Payment payment) {

@@ -10,6 +10,7 @@ public class Reservations {
     private int id;
     @Column(name = "room_id")
     private int roomId;
+    // todo one to many
     @Column(name = "customer_id")
 
     private int customerId;
